@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Para Mafe ❤️</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    color: #fff;
+    background:
+        radial-gradient(circle at 50% 20%, #4a174f 0%, transparent 35%),
+        radial-gradient(circle at 20% 80%, #32113d 0%, transparent 30%),
+        linear-gradient(145deg, #08000f, #18051f 50%, #08000e);
+    overflow-x: hidden;
+}
+
+/* ESTRELLAS */
+
+.stars,
+.stars::before,
+.stars::after {
+    position: fixed;
+    inset: 0;
+    content: "";
+    pointer-events: none;
+}
+
+.stars {
+    background-image:
+        radial-gradient(circle, rgba(255,255,255,.9) 1px, transparent 1.5px),
+        radial-gradient(circle, rgba(255,255,255,.5) 1px, transparent 1.5px);
+    background-size: 95px 95px, 145px 145px;
+    background-position: 10px 20px, 50px 70px;
+    animation: estrellas 12s linear infinite;
+}
+
+.stars::before {
+    background-image:
+        radial-gradient(circle, rgba(255,220,245,.8) 1px, transparent 1.5px);
+    background-size: 180px 180px;
+    animation: estrellas 20s linear infinite reverse;
+}
+
+@keyframes estrellas {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-95px);
+    }
+}
+
+/* CONTENEDOR */
+
+.page {
+    position: relative;
+    z-index: 2;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.card {
+    width: min(700px, 100%);
+    padding: 55px 30px;
+    text-align: center;
+
+    background: rgba(255,255,255,.055);
+    border: 1px solid rgba(255,255,255,.15);
+    border-radius: 30px;
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 25px 80px rgba(0,0,0,.45),
+        inset 0 0 40px rgba(255,255,255,.025);
+
+    animation: entrada 2s ease;
+}
+
+@keyframes entrada {
+    from {
+        opacity: 0;
+        transform: translateY(35px) scale(.97);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* CORAZÓN */
+
+.heart {
+    font-size: 65px;
+    margin-bottom: 15px;
+    animation: latido 1.7s infinite;
+    filter: drop-shadow(0 0 18px rgba(255,80,150,.7));
+}
+
+@keyframes latido {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.16);
+    }
+}
+
+/* TEXTO */
+
+.small {
+    font-size: 17px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    opacity: .75;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: clamp(48px, 12vw, 86px);
+    font-weight: normal;
+    line-height: 1;
+    margin-bottom: 22px;
+
+    background: linear-gradient(
+        90deg,
+        #fff,
+        #ffd4ec,
+        #fff
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+
+    text-shadow: 0 0 30px rgba(255,170,220,.25);
+}
+
+.subtitle {
+    font-size: 21px;
+    line-height: 1.7;
+    opacity: .88;
+    margin: 0 auto 40px;
+    max-width: 560px;
+}
+
+/* FECHA */
+
+.date-box {
+    margin: 30px auto;
+    padding: 22px;
+    border-top: 1px solid rgba(255,255,255,.18);
+    border-bottom: 1px solid rgba(255,255,255,.18);
+}
+
+.date-title {
+    font-size: 14px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: .65;
+    margin-bottom: 10px;
+}
+
+.date {
+    font-size: 28px;
+    letter-spacing: 4px;
+}
+
+/* CONTADOR */
+
+.counter-title {
+    margin-top: 35px;
+    margin-bottom: 18px;
+    font-size: 15px;
+    letter-spacing: 2px;
+    opacity: .65;
+}
+
+.counter {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.time {
+    min-width: 85px;
+    padding: 15px 10px;
+
+    background: rgba(255,255,255,.06);
+    border-radius: 15px;
+
+    border: 1px solid rgba(255,255,255,.08);
+}
+
+.number {
+    display: block;
+    font-size: 27px;
+}
+
+.label {
+    display: block;
+    margin-top: 5px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: .55;
+}
+
+/* CARTA */
+
+.letter {
+    margin-top: 50px;
+    padding-top: 35px;
+    border-top: 1px solid rgba(255,255,255,.12);
+}
+
+.letter p {
+    font-size: 19px;
+    line-height: 1.9;
+    margin-bottom: 18px;
+}
+
+.highlight {
+    font-size: 27px !important;
+    font-style: italic;
+    margin: 30px 0 !important;
+
+    color: #ffd5ec;
+
+    text-shadow:
+        0 0 15px rgba(255,130,190,.35);
+}
+
+.signature {
+    margin-top: 35px;
+    font-size: 18px;
+    opacity: .7;
+}
+
+/* CORAZONES FLOTANDO */
+
+.floating-heart {
+    position: fixed;
+    bottom: -30px;
+    color: rgba(255,160,210,.55);
+    font-size: 18px;
+    animation: subir linear forwards;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes subir {
+    from {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: .8;
+    }
+
+    to {
+        transform: translateY(-110vh) rotate(35deg);
+        opacity: 0;
+    }
+}
+
+/* MÓVIL */
+
+@media (max-width: 600px) {
+
+    .page {
+        padding: 20px 12px;
+    }
+
+    .card {
+        padding: 45px 20px;
+        border-radius: 24px;
+    }
+
+    .heart {
+        font-size: 55px;
+    }
+
+    .small {
+        font-size: 12px;
+        letter-spacing: 3px;
+    }
+
+    .subtitle {
+        font-size: 18px;
+    }
+
+    .date {
+        font-size: 21px;
+    }
+
+    .letter p {
+        font-size: 17px;
+    }
+
+    .highlight {
+        font-size: 23px !important;
+    }
+
+    .time {
+        min-width: 72px;
+    }
+
+    .number {
+        font-size: 23px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="stars"></div>
+
+<main class="page">
+
+    <section class="card">
+
+        <div class="heart">❤️</div>
+
+        <div class="small">
+            Para alguien muy especial
+        </div>
+
+        <h1>Mafe</h1>
+
+        <p class="subtitle">
+            Hay personas que llegan a nuestra vida por casualidad...
+            y otras que parecen llegar justo cuando tenían que llegar.
+        </p>
+
+        <div class="date-box">
+
+            <div class="date-title">
+                Nuestra historia comenzó
+            </div>
+
+            <div class="date">
+                22 · 09 · 2026
+            </div>
+
+        </div>
+
+        <div class="counter-title">
+            Y desde entonces...
+        </div>
+
+        <div class="counter">
+
+            <div class="time">
+                <span class="number" id="days">0</span>
+                <span class="label">Días</span>
+            </div>
+
+            <div class="time">
+                <span class="number" id="hours">0</span>
+                <span class="label">Horas</span>
+            </div>
+
+            <div class="time">
+                <span class="number" id="minutes">0</span>
+                <span class="label">Minutos</span>
+            </div>
+
+            <div class="time">
+                <span class="number" id="seconds">0</span>
+                <span class="label">Segundos</span>
+            </div>
+
+        </div>
+
+        <div class="letter">
+
+            <p>
+                No sé todo lo que nos espera,
+                pero sí sé algo que tengo muy claro:
+            </p>
+
+            <p class="highlight">
+                Eres mi regalo del cielo.
+            </p>
+
+            <p>
+                Y si pudiera volver a elegir aquel día,
+                volvería a elegirte a ti.
+            </p>
+
+            <p>
+                Porque desde que llegaste,
+                hay momentos que se sienten diferentes,
+                sonrisas que duran un poco más
+                y días que tienen un significado especial.
+            </p>
+
+            <p class="highlight">
+                Mafe, me encantas. ❤️
+            </p>
+
+            <div class="signature">
+                Desde el 22 de septiembre de 2026,<br>
+                cada día contigo cuenta.
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+<script>
+
+/* CONTADOR */
+
+const inicio = new Date("2026-09-22T00:00:00");
+
+function actualizarContador() {
+
+    const ahora = new Date();
+
+    let diferencia = ahora - inicio;
+
+    if (diferencia < 0) {
+        diferencia = 0;
+    }
+
+    const segundo = 1000;
+    const minuto = segundo * 60;
+    const hora = minuto * 60;
+    const dia = hora * 24;
+
+    const dias = Math.floor(diferencia / dia);
+
+    const horas = Math.floor(
+        (diferencia % dia) / hora
+    );
+
+    const minutos = Math.floor(
+        (diferencia % hora) / minuto
+    );
+
+    const segundos = Math.floor(
+        (diferencia % minuto) / segundo
+    );
+
+    document.getElementById("days").textContent = dias;
+    document.getElementById("hours").textContent = horas;
+    document.getElementById("minutes").textContent = minutos;
+    document.getElementById("seconds").textContent = segundos;
+}
+
+actualizarContador();
+
+setInterval(actualizarContador, 1000);
+
+
+/* CORAZONES FLOTANTES */
+
+function crearCorazon() {
+
+    const heart = document.createElement("div");
+
+    heart.className = "floating-heart";
+    heart.textContent = Math.random() > .5 ? "♥" : "♡";
+
+    heart.style.left =
+        Math.random() * 100 + "vw";
+
+    heart.style.fontSize =
+        (12 + Math.random() * 20) + "px";
+
+    const duracion =
+        7 + Math.random() * 8;
+
+    heart.style.animationDuration =
+        duracion + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, duracion * 1000);
+}
+
+setInterval(crearCorazon, 900);
+
+</script>
+
+</body>
+</html>
