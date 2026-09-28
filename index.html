@@ -56,12 +56,8 @@ body {
 }
 
 @keyframes estrellas {
-    from {
-        transform: translateY(0);
-    }
-    to {
-        transform: translateY(-95px);
-    }
+    from { transform: translateY(0); }
+    to   { transform: translateY(-95px); }
 }
 
 /* CONTENEDOR */
@@ -80,30 +76,20 @@ body {
     width: min(700px, 100%);
     padding: 55px 30px;
     text-align: center;
-
     background: rgba(255,255,255,.055);
     border: 1px solid rgba(255,255,255,.15);
     border-radius: 30px;
-
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-
     box-shadow:
         0 25px 80px rgba(0,0,0,.45),
         inset 0 0 40px rgba(255,255,255,.025);
-
     animation: entrada 2s ease;
 }
 
 @keyframes entrada {
-    from {
-        opacity: 0;
-        transform: translateY(35px) scale(.97);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
+    from { opacity: 0; transform: translateY(35px) scale(.97); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
 }
 
 /* CORAZÓN */
@@ -116,12 +102,8 @@ body {
 }
 
 @keyframes latido {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.16);
-    }
+    0%, 100% { transform: scale(1); }
+    50%       { transform: scale(1.16); }
 }
 
 /* TEXTO */
@@ -139,18 +121,10 @@ h1 {
     font-weight: normal;
     line-height: 1;
     margin-bottom: 22px;
-
-    background: linear-gradient(
-        90deg,
-        #fff,
-        #ffd4ec,
-        #fff
-    );
-
+    background: linear-gradient(90deg, #fff, #ffd4ec, #fff);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-
     text-shadow: 0 0 30px rgba(255,170,220,.25);
 }
 
@@ -162,26 +136,44 @@ h1 {
     max-width: 560px;
 }
 
-/* FECHA */
+/* FECHAS */
+
+.dates-wrap {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 30px auto;
+}
 
 .date-box {
-    margin: 30px auto;
-    padding: 22px;
-    border-top: 1px solid rgba(255,255,255,.18);
-    border-bottom: 1px solid rgba(255,255,255,.18);
+    flex: 1;
+    min-width: 200px;
+    padding: 20px 18px;
+    border: 1px solid rgba(255,255,255,.15);
+    border-radius: 18px;
+    background: rgba(255,255,255,.04);
 }
 
-.date-title {
-    font-size: 14px;
+.date-tag {
+    font-size: 11px;
     letter-spacing: 3px;
     text-transform: uppercase;
-    opacity: .65;
-    margin-bottom: 10px;
+    opacity: .55;
+    margin-bottom: 8px;
+    font-family: -apple-system, sans-serif;
 }
 
-.date {
-    font-size: 28px;
-    letter-spacing: 4px;
+.date-num {
+    font-size: 24px;
+    letter-spacing: 3px;
+    margin-bottom: 6px;
+}
+
+.date-label {
+    font-size: 13px;
+    opacity: .65;
+    font-style: italic;
 }
 
 /* CONTADOR */
@@ -204,16 +196,15 @@ h1 {
 .time {
     min-width: 85px;
     padding: 15px 10px;
-
     background: rgba(255,255,255,.06);
     border-radius: 15px;
-
     border: 1px solid rgba(255,255,255,.08);
 }
 
 .number {
     display: block;
     font-size: 27px;
+    font-variant-numeric: tabular-nums;
 }
 
 .label {
@@ -223,6 +214,7 @@ h1 {
     text-transform: uppercase;
     letter-spacing: 1px;
     opacity: .55;
+    font-family: -apple-system, sans-serif;
 }
 
 /* CARTA */
@@ -243,11 +235,8 @@ h1 {
     font-size: 27px !important;
     font-style: italic;
     margin: 30px 0 !important;
-
     color: #ffd5ec;
-
-    text-shadow:
-        0 0 15px rgba(255,130,190,.35);
+    text-shadow: 0 0 15px rgba(255,130,190,.35);
 }
 
 .signature {
@@ -269,66 +258,26 @@ h1 {
 }
 
 @keyframes subir {
-    from {
-        transform: translateY(0) rotate(0deg);
-        opacity: 0;
-    }
-
-    15% {
-        opacity: .8;
-    }
-
-    to {
-        transform: translateY(-110vh) rotate(35deg);
-        opacity: 0;
-    }
+    from  { transform: translateY(0) rotate(0deg); opacity: 0; }
+    15%   { opacity: .8; }
+    to    { transform: translateY(-110vh) rotate(35deg); opacity: 0; }
 }
 
 /* MÓVIL */
 
 @media (max-width: 600px) {
-
-    .page {
-        padding: 20px 12px;
-    }
-
-    .card {
-        padding: 45px 20px;
-        border-radius: 24px;
-    }
-
-    .heart {
-        font-size: 55px;
-    }
-
-    .small {
-        font-size: 12px;
-        letter-spacing: 3px;
-    }
-
-    .subtitle {
-        font-size: 18px;
-    }
-
-    .date {
-        font-size: 21px;
-    }
-
-    .letter p {
-        font-size: 17px;
-    }
-
-    .highlight {
-        font-size: 23px !important;
-    }
-
-    .time {
-        min-width: 72px;
-    }
-
-    .number {
-        font-size: 23px;
-    }
+    .page  { padding: 20px 12px; }
+    .card  { padding: 45px 20px; border-radius: 24px; }
+    .heart { font-size: 55px; }
+    .small { font-size: 12px; letter-spacing: 3px; }
+    .subtitle { font-size: 18px; }
+    .date-num { font-size: 20px; }
+    .letter p { font-size: 17px; }
+    .highlight { font-size: 23px !important; }
+    .time  { min-width: 72px; }
+    .number { font-size: 23px; }
+    .dates-wrap { flex-direction: column; }
+    .date-box { min-width: unset; }
 }
 </style>
 </head>
@@ -338,14 +287,11 @@ h1 {
 <div class="stars"></div>
 
 <main class="page">
-
     <section class="card">
 
         <div class="heart">❤️</div>
 
-        <div class="small">
-            Para alguien muy especial
-        </div>
+        <div class="small">Para alguien muy especial</div>
 
         <h1>Mafe</h1>
 
@@ -354,44 +300,42 @@ h1 {
             y otras que parecen llegar justo cuando tenían que llegar.
         </p>
 
-        <div class="date-box">
+        <!-- DOS FECHAS -->
+        <div class="dates-wrap">
 
-            <div class="date-title">
-                Nuestra historia comenzó
+            <div class="date-box">
+                <div class="date-tag">Nos conocimos</div>
+                <div class="date-num">17 · 05 · 2026</div>
+                <div class="date-label">el día que todo empezó</div>
             </div>
 
-            <div class="date">
-                22 · 08 · 2026
+            <div class="date-box">
+                <div class="date-tag">Somos novios desde</div>
+                <div class="date-num">22 · 08 · 2026</div>
+                <div class="date-label">nuestra historia oficial</div>
             </div>
 
         </div>
 
-        <div class="counter-title">
-            Y desde entonces...
-        </div>
+        <div class="counter-title">Y como novios llevamos...</div>
 
         <div class="counter">
-
             <div class="time">
                 <span class="number" id="days">0</span>
                 <span class="label">Días</span>
             </div>
-
             <div class="time">
                 <span class="number" id="hours">0</span>
                 <span class="label">Horas</span>
             </div>
-
             <div class="time">
                 <span class="number" id="minutes">0</span>
                 <span class="label">Minutos</span>
             </div>
-
             <div class="time">
                 <span class="number" id="seconds">0</span>
                 <span class="label">Segundos</span>
             </div>
-
         </div>
 
         <div class="letter">
@@ -429,81 +373,43 @@ h1 {
         </div>
 
     </section>
-
 </main>
 
 <script>
 
-/* CONTADOR */
-
-const inicio = new Date("2026-09-22T00:00:00");
+/* CONTADOR — desde que son novios: 22 agosto 2026 */
+const inicio = new Date("2026-08-22T00:00:00");
 
 function actualizarContador() {
-
     const ahora = new Date();
-
     let diferencia = ahora - inicio;
-
-    if (diferencia < 0) {
-        diferencia = 0;
-    }
+    if (diferencia < 0) diferencia = 0;
 
     const segundo = 1000;
-    const minuto = segundo * 60;
-    const hora = minuto * 60;
-    const dia = hora * 24;
+    const minuto  = segundo * 60;
+    const hora    = minuto  * 60;
+    const dia     = hora    * 24;
 
-    const dias = Math.floor(diferencia / dia);
-
-    const horas = Math.floor(
-        (diferencia % dia) / hora
-    );
-
-    const minutos = Math.floor(
-        (diferencia % hora) / minuto
-    );
-
-    const segundos = Math.floor(
-        (diferencia % minuto) / segundo
-    );
-
-    document.getElementById("days").textContent = dias;
-    document.getElementById("hours").textContent = horas;
-    document.getElementById("minutes").textContent = minutos;
-    document.getElementById("seconds").textContent = segundos;
+    document.getElementById("days").textContent    = Math.floor(diferencia / dia);
+    document.getElementById("hours").textContent   = Math.floor((diferencia % dia)  / hora);
+    document.getElementById("minutes").textContent = Math.floor((diferencia % hora) / minuto);
+    document.getElementById("seconds").textContent = Math.floor((diferencia % minuto) / segundo);
 }
 
 actualizarContador();
-
 setInterval(actualizarContador, 1000);
 
-
 /* CORAZONES FLOTANTES */
-
 function crearCorazon() {
-
     const heart = document.createElement("div");
-
     heart.className = "floating-heart";
     heart.textContent = Math.random() > .5 ? "♥" : "♡";
-
-    heart.style.left =
-        Math.random() * 100 + "vw";
-
-    heart.style.fontSize =
-        (12 + Math.random() * 20) + "px";
-
-    const duracion =
-        7 + Math.random() * 8;
-
-    heart.style.animationDuration =
-        duracion + "s";
-
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (12 + Math.random() * 20) + "px";
+    const duracion = 7 + Math.random() * 8;
+    heart.style.animationDuration = duracion + "s";
     document.body.appendChild(heart);
-
-    setTimeout(() => {
-        heart.remove();
-    }, duracion * 1000);
+    setTimeout(() => heart.remove(), duracion * 1000);
 }
 
 setInterval(crearCorazon, 900);
